@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickMark - Join a class</title>
+<link rel="stylesheet" href="/css/student.css">
+</head>
+<body>
+<div class="login-wrap"><div class="login-card" id="card" style="max-width:440px">
+  <h1>⚡ QuickMark</h1><p class="subtle">Join a class</p>
+  <div id="error" class="error-msg"></div>
+  <div id="stepCode">
+    <div class="field"><label for="code">Class code from your teacher</label><input type="text" id="code" maxlength="9" placeholder="ABCD-2345" autocomplete="off" style="text-transform:uppercase;letter-spacing:2px"></div>
+    <button id="checkBtn" class="btn full">Continue</button>
+    <p class="subtle" style="margin-top:12px"><a href="/student/login.html">Back to login</a></p>
+  </div>
+  <div id="stepForm" style="display:none"></div>
+</div></div>
+<script src="/js/api.js"></script>
+<script src="/js/student_join.js"></script>
+</body>
+</html>

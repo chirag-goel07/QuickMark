@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickMark - Dashboard</title>
+<link rel="stylesheet" href="/css/teacher.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand-row">
+      <div class="brand-logo">⚡</div>
+      <div><div class="brand">QuickMark</div><div class="brand-sub">Smart QR-Based Attendance System</div></div>
+    </div>
+    <a class="nav-btn active" href="/teacher/dashboard.html">🏠&nbsp;&nbsp; Dashboard</a>
+    <a class="nav-btn" href="/teacher/classes.html">🎓&nbsp;&nbsp; Classes</a>
+    <a class="nav-btn" href="/teacher/students.html">👥&nbsp;&nbsp; Students</a>
+    <a class="nav-btn" href="/teacher/take_attendance.html">▦&nbsp;&nbsp; Take Attendance</a>
+    <a class="nav-btn" href="/teacher/history.html">🕘&nbsp;&nbsp; Attendance History</a>
+    <a class="nav-btn" href="/teacher/reports.html">📊&nbsp;&nbsp; Reports</a>
+    <a class="nav-btn" href="/teacher/settings.html">⚙️&nbsp;&nbsp; Settings</a>
+    <a class="nav-btn" href="#" id="logout">🚪&nbsp;&nbsp; Logout</a>
+    <div class="side-spacer"></div>
+    <div class="side-tag">Better Attendance<br>Builds a Brighter Future</div>
+    <div class="side-foot">⚡ <b>QuickMark</b></div>
+  </aside>
+
+  <div class="main">
+    <header class="header">
+      <div>
+        <div class="greet" id="greet">Hello!</div>
+        <div class="subtle">Here's a quick overview of your classes and attendance.</div>
+      </div>
+      <div class="header-grow"></div>
+      <div class="subtle" id="dateLbl"></div>
+      <div class="subtle" id="timeLbl"></div>
+      <div class="user"><div class="avatar">👤</div>
+        <div><div class="user-name" id="userName"></div><div class="subtle">Teacher</div></div></div>
+    </header>
+
+    <div class="body" id="body"><div class="loading">Loading dashboard...</div></div>
+  </div>
+</div>
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/emails.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

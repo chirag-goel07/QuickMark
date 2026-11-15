@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickMark - Student Login</title>
+<link rel="stylesheet" href="/css/student.css">
+</head>
+<body>
+<div class="login-wrap"><div class="login-card">
+  <h1>⚡ QuickMark</h1><p class="subtle">Student login</p>
+  <div id="error" class="error-msg"></div>
+  <div class="field"><label for="email">Email</label><input type="email" id="email" autocomplete="username"></div>
+  <div class="field"><label for="password">Password</label><input type="password" id="password" autocomplete="current-password"></div>
+  <button id="loginBtn" class="btn full">Log in</button>
+  <p class="subtle" style="margin-top:12px"><a href="/student/forgot.html">Forgot password?</a> · <a href="/student/join.html">Join a class with a code</a></p>
+</div></div>
+<script src="/js/api.js"></script>
+<script>
+const btn = document.getElementById('loginBtn'), err = document.getElementById('error');
+async function doLogin() {
+    err.classList.remove('show'); btn.disabled = true; btn.textContent = 'Logging in...';
+    try {
+        await api('/api/auth/login', { method: 'POST', body: { email: document.getElementById('email').value,
+            password: document.getElementById('password').value, role: 'student' } });
+        const next = new URLSearchParams(location.search).get('next');
+        location.href = next && /^\/student\/[a-z_]+\.html(\?[A-Za-z0-9=&_-]*)?$/.test(next) ? next : '/student/dashboard.html';
+    } catch (e) { err.textContent = e.message; err.classList.add('show'); btn.disabled = false; btn.textContent = 'Log in'; }
+}
+btn.addEventListener('click', doLogin);
+document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+</script>
+</body>
+</html>
