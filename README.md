@@ -177,6 +177,3 @@ compiled to a shared library, and called from Python with `ctypes` (`backend/ser
 | `csv_writer.hpp` | `CsvWriter` | RAII (owned through a handle), encapsulated buffer | single-pass quoting / escaping | `services/csvutil.py` (CSV + Excel safety) |
 | `quickmark_core.cpp` | C interface (`qm_*`) | - | - | the only file Python talks to |
 
-Things worth saying in your viva/report: the sliding window removes expired timestamps then compares the size to the limit; natural order splits `A10` into
-text/number chunks so `A9 < A10` (numbers compare as big integers, so `007 = 7`); percentages are rounded exactly like Python's `round(x, 1)`.
-Everything else (database queries, routes, sessions, QR tokens, e-mail, Socket.IO) is still Python.
